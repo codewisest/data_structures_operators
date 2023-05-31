@@ -26,6 +26,10 @@ const restaurant = {
       close: 24,
     },
   },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 };
 
 let [main, , secondary] = restaurant.categories;
@@ -34,3 +38,12 @@ console.log(main, secondary);
 
 [secondary, main] = [main, secondary];
 console.log(main, secondary);
+
+const [starterDish, mainDish] = restaurant.order(1, 2);
+
+console.log(starterDish, mainDish);
+
+const nested = [2, 4, [5, 6]];
+
+const [i, , [j, l]] = nested;
+console.log(l);

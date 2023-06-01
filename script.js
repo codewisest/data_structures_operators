@@ -30,12 +30,27 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+    console.log(starterIndex);
+  },
 };
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'Via del Sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
 
 let { name: restaurantName, openingHours, categories } = restaurant;
 // console.log(restaurantName, openingHours, categories);
 let { opening = {}, mainMenu = {} } = restaurant;
 console.log(opening, mainMenu);
+
+const {
+  sat: { open, close },
+} = openingHours;
+console.log(open, close);
 
 // let [main, , secondary] = restaurant.categories;
 

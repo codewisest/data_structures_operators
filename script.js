@@ -39,6 +39,7 @@ const restaurant = {
   },
 };
 
+// spread arrays
 const ingredients = [
   prompt('Let us make pasta. Ingredient 1?'),
   prompt('Ingredient 2?'),
@@ -68,6 +69,9 @@ console.log(mainMenuCopy);
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 console.log(menu);
 
+// spread objects
+const newRestaurant = { ...restaurant, founder: 'WisestMe', foundedIn: '1987' };
+console.log(newRestaurant);
 // let { name: restaurantName, openingHours, categories } = restaurant;
 // // console.log(restaurantName, openingHours, categories);
 // let { opening = {}, mainMenu = {} } = restaurant;

@@ -33,8 +33,19 @@ const restaurant = {
   orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
     console.log(starterIndex);
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your pasta made with ${ing1}, ${ing2} and ${ing3}`);
+  },
 };
 
+const ingredients = [
+  prompt('Let us make pasta. Ingredient 1?'),
+  prompt('Ingredient 2?'),
+  prompt('Ingredient 3?'),
+];
+
+restaurant.orderPasta(...ingredients);
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
@@ -42,15 +53,30 @@ restaurant.orderDelivery({
   starterIndex: 2,
 });
 
-let { name: restaurantName, openingHours, categories } = restaurant;
-// console.log(restaurantName, openingHours, categories);
-let { opening = {}, mainMenu = {} } = restaurant;
-console.log(opening, mainMenu);
+const arr = [7, 8, 9];
+const newArr = [5, 6, ...arr];
 
-const {
-  sat: { open, close },
-} = openingHours;
-console.log(open, close);
+console.log(newArr);
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Eba'];
+console.log(newMenu);
+
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// let { name: restaurantName, openingHours, categories } = restaurant;
+// // console.log(restaurantName, openingHours, categories);
+// let { opening = {}, mainMenu = {} } = restaurant;
+// console.log(opening, mainMenu);
+
+// const {
+//   sat: { open, close },
+// } = openingHours;
+// console.log(open, close);
 
 // let [main, , secondary] = restaurant.categories;
 

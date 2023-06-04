@@ -94,6 +94,14 @@ const guest3 = restaurant.numGuest || 10;
 console.log(guest1, guest2, guest3);
 
 console.log('----short circuit AND -----');
+console.log(0 && 'Jonas');
+console.log(7 && 'Chiji');
+
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
 // // spread arrays
 // const ingredients = [

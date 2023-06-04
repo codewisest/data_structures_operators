@@ -39,6 +39,7 @@ const restaurant = {
   },
 };
 
+// rest arrays
 const arr = [1, 2, ...[3, 4]];
 const [a, b, ...remaining] = [1, 2, 3, 4, 5];
 
@@ -49,6 +50,10 @@ const [food1, food2, ...otherFoods] = [
   ...restaurant.starterMenu,
 ];
 console.log(otherFoods);
+
+// rest objects
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
 // // spread arrays
 // const ingredients = [
 //   prompt('Let us make pasta. Ingredient 1?'),

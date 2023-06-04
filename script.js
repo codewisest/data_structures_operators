@@ -37,8 +37,13 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your pasta made with ${ing1}, ${ing2} and ${ing3}`);
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(otherIngredients);
+  },
 };
 
+restaurant.orderPizza('Mushrooms', 'Onions', 'Spinach');
 // rest arrays
 const arr = [1, 2, ...[3, 4]];
 const [a, b, ...remaining] = [1, 2, 3, 4, 5];

@@ -73,6 +73,18 @@ console.log(add(2, 5));
 console.log(add(2, 5, 6, 10));
 console.log(add(2, 8, 6, 10));
 
+console.log('----short circuit OR -----');
+console.log(0 || 'Chiji');
+console.log('' || 'Chiji');
+console.log(undefined || null);
+console.log(null || undefined);
+
+restaurant.numGuest = 23;
+
+const guest1 = restaurant.numGuest || 10;
+
+console.log(guest1);
+
 // // spread arrays
 // const ingredients = [
 //   prompt('Let us make pasta. Ingredient 1?'),

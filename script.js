@@ -54,6 +54,20 @@ console.log(otherFoods);
 // rest objects
 const { sat, ...weekdays } = restaurant.openingHours;
 console.log(weekdays);
+
+// function
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
+};
+
+console.log(add(2, 5));
+console.log(add(2, 5, 6, 10));
+console.log(add(2, 8, 6, 10));
+
 // // spread arrays
 // const ingredients = [
 //   prompt('Let us make pasta. Ingredient 1?'),

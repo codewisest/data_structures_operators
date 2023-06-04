@@ -79,11 +79,21 @@ console.log('' || 'Chiji');
 console.log(undefined || null);
 console.log(null || undefined);
 
-restaurant.numGuest = 23;
+restaurant.numGuest = 0;
+let guest1;
+if (restaurant.numGuest === true) {
+  guest1 = restaurant.numGuest;
+} else {
+  guest1 = 10;
+}
 
-const guest1 = restaurant.numGuest || 10;
+const guest2 = restaurant.numGuest ? restaurant.numGuest : 10;
 
-console.log(guest1);
+const guest3 = restaurant.numGuest || 10;
+
+console.log(guest1, guest2, guest3);
+
+console.log('----short circuit AND -----');
 
 // // spread arrays
 // const ingredients = [

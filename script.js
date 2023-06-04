@@ -39,39 +39,49 @@ const restaurant = {
   },
 };
 
-// spread arrays
-const ingredients = [
-  prompt('Let us make pasta. Ingredient 1?'),
-  prompt('Ingredient 2?'),
-  prompt('Ingredient 3?'),
+const arr = [1, 2, ...[3, 4]];
+const [a, b, ...remaining] = [1, 2, 3, 4, 5];
+
+console.log(remaining);
+
+const [food1, food2, ...otherFoods] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
 ];
+console.log(otherFoods);
+// // spread arrays
+// const ingredients = [
+//   prompt('Let us make pasta. Ingredient 1?'),
+//   prompt('Ingredient 2?'),
+//   prompt('Ingredient 3?'),
+// ];
 
-restaurant.orderPasta(...ingredients);
-restaurant.orderDelivery({
-  time: '22:30',
-  address: 'Via del Sole, 21',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+// restaurant.orderPasta(...ingredients);
+// restaurant.orderDelivery({
+//   time: '22:30',
+//   address: 'Via del Sole, 21',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
 
-const arr = [7, 8, 9];
-const newArr = [5, 6, ...arr];
+// const arr = [7, 8, 9];
+// const newArr = [5, 6, ...arr];
 
-console.log(newArr);
-console.log(...newArr);
+// console.log(newArr);
+// console.log(...newArr);
 
-const newMenu = [...restaurant.mainMenu, 'Eba'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Eba'];
+// console.log(newMenu);
 
-const mainMenuCopy = [...restaurant.mainMenu];
-console.log(mainMenuCopy);
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menu);
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// console.log(menu);
 
-// spread objects
-const newRestaurant = { ...restaurant, founder: 'WisestMe', foundedIn: '1987' };
-console.log(newRestaurant);
+// // spread objects
+// const newRestaurant = { ...restaurant, founder: 'WisestMe', foundedIn: '1987' };
+// console.log(newRestaurant);
 // let { name: restaurantName, openingHours, categories } = restaurant;
 // // console.log(restaurantName, openingHours, categories);
 // let { opening = {}, mainMenu = {} } = restaurant;

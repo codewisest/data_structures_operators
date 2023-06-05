@@ -43,65 +43,76 @@ const restaurant = {
   },
 };
 
-restaurant.orderPizza('Mushrooms', 'Onions', 'Spinach');
-// rest arrays
-const arr = [1, 2, ...[3, 4]];
-const [a, b, ...remaining] = [1, 2, 3, 4, 5];
-
-console.log(remaining);
-
-const [food1, food2, ...otherFoods] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(otherFoods);
-
-// rest objects
-const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
-
-// function
-const add = function (...numbers) {
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  return sum;
-};
-
-console.log(add(2, 5));
-console.log(add(2, 5, 6, 10));
-console.log(add(2, 8, 6, 10));
-
-console.log('----short circuit OR -----');
-console.log(0 || 'Chiji');
-console.log('' || 'Chiji');
-console.log(undefined || null);
-console.log(null || undefined);
-
-restaurant.numGuest = 0;
-let guest1;
-if (restaurant.numGuest === true) {
-  guest1 = restaurant.numGuest;
-} else {
-  guest1 = 10;
+// ------------ LOOPING ---------------------
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+for (const item of menu) {
+  console.log(item);
 }
 
-const guest2 = restaurant.numGuest ? restaurant.numGuest : 10;
-
-const guest3 = restaurant.numGuest || 10;
-
-console.log(guest1, guest2, guest3);
-
-console.log('----short circuit AND -----');
-console.log(0 && 'Jonas');
-console.log(7 && 'Chiji');
-
-if (restaurant.orderPizza) {
-  restaurant.orderPizza('mushrooms', 'spinach');
+for (const [i, item] of menu.entries()) {
+  console.log(i, item);
 }
 
-restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+// ------------ DESTRUCTURE --------------------
+// restaurant.orderPizza('Mushrooms', 'Onions', 'Spinach');
+// // rest arrays
+// const arr = [1, 2, ...[3, 4]];
+// const [a, b, ...remaining] = [1, 2, 3, 4, 5];
+
+// console.log(remaining);
+
+// const [food1, food2, ...otherFoods] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(otherFoods);
+
+// // rest objects
+// const { sat, ...weekdays } = restaurant.openingHours;
+// console.log(weekdays);
+
+// // function
+// const add = function (...numbers) {
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   return sum;
+// };
+
+// console.log(add(2, 5));
+// console.log(add(2, 5, 6, 10));
+// console.log(add(2, 8, 6, 10));
+
+// console.log('----short circuit OR -----');
+// console.log(0 || 'Chiji');
+// console.log('' || 'Chiji');
+// console.log(undefined || null);
+// console.log(null || undefined);
+
+// restaurant.numGuest = 0;
+// let guest1;
+// if (restaurant.numGuest === true) {
+//   guest1 = restaurant.numGuest;
+// } else {
+//   guest1 = 10;
+// }
+
+// const guest2 = restaurant.numGuest ? restaurant.numGuest : 10;
+
+// const guest3 = restaurant.numGuest || 10;
+
+// console.log(guest1, guest2, guest3);
+
+// console.log('----short circuit AND -----');
+// console.log(0 && 'Jonas');
+// console.log(7 && 'Chiji');
+
+// if (restaurant.orderPizza) {
+//   restaurant.orderPizza('mushrooms', 'spinach');
+// }
+
+// restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 
 // // spread arrays
 // const ingredients = [

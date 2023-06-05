@@ -43,16 +43,38 @@ const restaurant = {
   },
 };
 
-const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-
-for (const day of days) {
-  console.log(day);
-  console.log(
-    `On ${day} we open at ${restaurant.openingHours[day]?.open ?? 'closed'}`
-  );
+// ----------- LOOP OBJECTS -----------------
+for (const [day, { open, close }] of Object.entries(restaurant.openingHours)) {
+  console.log(`On ${day}, we open by ${open} and close by ${close}`);
 }
 
-console.log(restaurant.openingHours.mon?.open);
+let openStr = `we are open on `;
+for (const day of Object.keys(restaurant.openingHours)) {
+  openStr += `${day}, `;
+}
+
+console.log(openStr);
+
+for (const { open, close } of Object.values(restaurant.openingHours)) {
+  console.log(open, close);
+}
+
+({ open, close } = Object.values(restaurant.openingHours));
+console.log(open, close);
+
+const valueTest = Object.values(restaurant.openingHours);
+console.log(valueTest);
+// ----------- OPTIONAL CHAINING -------------------
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+// for (const day of days) {
+//   console.log(day);
+//   console.log(
+//     `On ${day} we open at ${restaurant.openingHours[day]?.open ?? 'closed'}`
+//   );
+// }
+
+// console.log(restaurant.openingHours.mon?.open);
 
 // // ------------ LOOPING ---------------------
 // const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];

@@ -43,15 +43,26 @@ const restaurant = {
   },
 };
 
-// ------------ LOOPING ---------------------
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-for (const item of menu) {
-  console.log(item);
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+for (const day of days) {
+  console.log(day);
+  console.log(
+    `On ${day} we open at ${restaurant.openingHours[day]?.open ?? 'closed'}`
+  );
 }
 
-for (const [i, item] of menu.entries()) {
-  console.log(i, item);
-}
+console.log(restaurant.openingHours.mon?.open);
+
+// // ------------ LOOPING ---------------------
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// for (const item of menu) {
+//   console.log(item);
+// }
+
+// for (const [i, item] of menu.entries()) {
+//   console.log(i, item);
+// }
 
 // ------------ DESTRUCTURE --------------------
 // restaurant.orderPizza('Mushrooms', 'Onions', 'Spinach');

@@ -40,8 +40,9 @@ const game = {
   },
 };
 
-const players1 = game.players[0];
-const players2 = game.players[1];
+// const players1 = game.players[0];
+// const players2 = game.players[1];
+const [players1, players2] = game.players;
 const [gk1, ...fieldPlayers1] = players1;
 const [gk2, ...fieldPlayers2] = players2;
 
@@ -58,9 +59,10 @@ let { team1, x: draw, team2 } = game.odds;
 console.log(team1, draw, team2);
 
 const printGoals = function (...playerName) {
-  for (let i = 0; i < playerName.length; i++) {
-    console.log(playerName[i]);
-  }
+  //   for (let i = 0; i < playerName.length; i++) {
+  //     console.log(playerName[i]);
+  //   }
+  console.log(playerName);
   console.log(`Number of goals scored is ${playerName.length}`);
 };
 
@@ -68,7 +70,5 @@ printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
 
 printGoals(...game.scored);
 
-team1 = game.odds.team1 < game.odds.team2;
-const winner = 'team1' || 'team2';
-
-console.log(winner);
+team1 > team2 && console.log('Team 2 is mor likely to win');
+team1 > team2 || console.log('Team 1 is mor likely to win');

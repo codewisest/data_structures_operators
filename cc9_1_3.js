@@ -40,8 +40,7 @@ const game = {
   },
 };
 
-// const players1 = game.players[0];
-// const players2 = game.players[1];
+// challenge 1
 const [players1, players2] = game.players;
 const [gk1, ...fieldPlayers1] = players1;
 const [gk2, ...fieldPlayers2] = players2;
@@ -72,3 +71,29 @@ printGoals(...game.scored);
 
 team1 > team2 && console.log('Team 2 is mor likely to win');
 team1 > team2 || console.log('Team 1 is mor likely to win');
+
+// challenge 3
+for (const [i, scorer] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${scorer}`);
+}
+
+let gameOddSum = 0;
+for (const odd of Object.values(game.odds)) {
+  console.log(odd);
+  gameOddSum += odd;
+}
+const oddsAverage = gameOddSum / Object.keys(game.odds).length;
+console.log(`Game odd average is ${oddsAverage}`);
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamName = game[team] || 'draw';
+  console.log(`Odd of victory for  ${teamName} is ${odd}`);
+}
+
+const scorers = {};
+
+for (const [i, scorer] of game.scored.entries()) {
+  scorers[scorer] = i;
+}
+
+console.log(scorers);

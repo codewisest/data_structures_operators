@@ -43,27 +43,55 @@ const restaurant = {
   },
 };
 
-// ----------- LOOP OBJECTS -----------------
-for (const [day, { open, close }] of Object.entries(restaurant.openingHours)) {
-  console.log(`On ${day}, we open by ${open} and close by ${close}`);
+// ---------- Sets -----------
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+
+console.log(ordersSet);
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+
+console.log(ordersSet);
+
+for (const order of ordersSet) {
+  console.log(order);
 }
 
-let openStr = `we are open on `;
-for (const day of Object.keys(restaurant.openingHours)) {
-  openStr += `${day}, `;
-}
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = new Set(staff);
 
-console.log(openStr);
+console.log([...staffUnique]);
 
-for (const { open, close } of Object.values(restaurant.openingHours)) {
-  console.log(open, close);
-}
+// // ----------- LOOP OBJECTS -----------------
+// for (const [day, { open, close }] of Object.entries(restaurant.openingHours)) {
+//   console.log(`On ${day}, we open by ${open} and close by ${close}`);
+// }
 
-({ open, close } = Object.values(restaurant.openingHours));
-console.log(open, close);
+// let openStr = `we are open on `;
+// for (const day of Object.keys(restaurant.openingHours)) {
+//   openStr += `${day}, `;
+// }
 
-const valueTest = Object.values(restaurant.openingHours);
-console.log(valueTest);
+// console.log(openStr);
+
+// for (const { open, close } of Object.values(restaurant.openingHours)) {
+//   console.log(open, close);
+// }
+
+// ({ open, close } = Object.values(restaurant.openingHours));
+// console.log(open, close);
+
+// const valueTest = Object.values(restaurant.openingHours);
+// console.log(valueTest);
 // ----------- OPTIONAL CHAINING -------------------
 // const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 

@@ -43,33 +43,62 @@ const restaurant = {
   },
 };
 
-// ---------- Sets -----------
-const ordersSet = new Set([
-  'Pasta',
-  'Pizza',
-  'Pizza',
-  'Risotto',
-  'Pasta',
-  'Pizza',
-]);
+// Maps
+const restaurantMap = new Map();
 
-console.log(ordersSet);
-console.log(ordersSet.size);
-console.log(ordersSet.has('Pizza'));
-ordersSet.add('Garlic Bread');
-ordersSet.add('Garlic Bread');
-ordersSet.delete('Risotto');
+restaurantMap.set('name', 'The Place');
+console.log(restaurantMap);
 
-console.log(ordersSet);
+restaurantMap
+  .set('categories', ['Organic', 'Artificial', 'Hybrid'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'we are open')
+  .set(false, 'we are closed');
 
-for (const order of ordersSet) {
-  console.log(order);
-}
+console.log(restaurantMap.get(true));
 
-const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
-const staffUnique = new Set(staff);
+console.log(restaurantMap);
 
-console.log([...staffUnique]);
+const time = 8;
+console.log(
+  restaurantMap.get(
+    time > restaurantMap.get('open') && time < restaurantMap.get('close')
+  )
+);
+
+console.log(restaurantMap.has('open'));
+
+const mapOfRestaurant = new Map(Object.entries(restaurant));
+console.log();
+mapOfRestaurant;
+// // ---------- Sets -----------
+// const ordersSet = new Set([
+//   'Pasta',
+//   'Pizza',
+//   'Pizza',
+//   'Risotto',
+//   'Pasta',
+//   'Pizza',
+// ]);
+
+// console.log(ordersSet);
+// console.log(ordersSet.size);
+// console.log(ordersSet.has('Pizza'));
+// ordersSet.add('Garlic Bread');
+// ordersSet.add('Garlic Bread');
+// ordersSet.delete('Risotto');
+
+// console.log(ordersSet);
+
+// for (const order of ordersSet) {
+//   console.log(order);
+// }
+
+// const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+// const staffUnique = new Set(staff);
+
+// console.log([...staffUnique]);
 
 // // ----------- LOOP OBJECTS -----------------
 // for (const [day, { open, close }] of Object.entries(restaurant.openingHours)) {

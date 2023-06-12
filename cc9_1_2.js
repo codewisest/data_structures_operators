@@ -72,7 +72,7 @@ printGoals(...game.scored);
 team1 > team2 && console.log('Team 2 is mor likely to win');
 team1 > team2 || console.log('Team 1 is mor likely to win');
 
-// challenge 3
+// challenge 2
 for (const [i, scorer] of game.scored.entries()) {
   console.log(`Goal ${i + 1}: ${scorer}`);
 }

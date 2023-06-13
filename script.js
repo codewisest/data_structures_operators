@@ -4,74 +4,109 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
-// Data needed for first part of the section
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+const airline = 'Nigerian Airways';
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+console.log(airline.length);
+console.log(airline[6]);
+console.log(airline.indexOf('N'));
 
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-  orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
-    console.log(starterIndex);
-  },
+console.log(airline.slice(0, airline.indexOf(' ')));
 
-  orderPasta: function (ing1, ing2, ing3) {
-    console.log(`Here is your pasta made with ${ing1}, ${ing2} and ${ing3}`);
-  },
-
-  orderPizza: function (mainIngredient, ...otherIngredients) {
-    console.log(otherIngredients);
-  },
+const checkMiddleSeat = function (seat) {
+  if (seat.slice(-1) === 'C' || seat.slice(-1) === 'B') {
+    console.log('Congrats, you have a middle seat');
+  } else {
+    console.log('Nice one. You have a window seat');
+  }
 };
 
-// Maps
-const restaurantMap = new Map();
+checkMiddleSeat('11D');
 
-restaurantMap.set('name', 'The Place');
-console.log(restaurantMap);
+const passenger = 'jOnAS';
+const passengerLower = passenger.toLowerCase();
+console.log(passengerLower);
 
-restaurantMap
-  .set('categories', ['Organic', 'Artificial', 'Hybrid'])
-  .set('open', 11)
-  .set('close', 23)
-  .set(true, 'we are open')
-  .set(false, 'we are closed');
+const passengerCorrect = `${passengerLower[0].toUpperCase()}${passengerLower.slice(
+  1
+)}`;
 
-console.log(restaurantMap.get(true));
+console.log(passengerCorrect);
 
-console.log(restaurantMap);
+const email = 'hello@wisest.ca';
+const loginEmail = '    Hello@Wisest.ca  ';
 
-const time = 8;
-console.log(
-  restaurantMap.get(
-    time > restaurantMap.get('open') && time < restaurantMap.get('close')
-  )
-);
+const normalizedEmail = loginEmail.toLowerCase().trim();
 
-console.log(restaurantMap.has('open'));
+console.log(loginEmail, normalizedEmail);
 
-const mapOfRestaurant = new Map(Object.entries(restaurant));
-console.log();
-mapOfRestaurant;
+// Data needed for first part of the section
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//     fri: {
+//       open: 11,
+//       close: 23,
+//     },
+//     sat: {
+//       open: 0, // Open 24 hours
+//       close: 24,
+//     },
+//   },
+
+//   order: function (starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   orderDelivery: function ({ starterIndex, mainIndex, time, address }) {
+//     console.log(starterIndex);
+//   },
+
+//   orderPasta: function (ing1, ing2, ing3) {
+//     console.log(`Here is your pasta made with ${ing1}, ${ing2} and ${ing3}`);
+//   },
+
+//   orderPizza: function (mainIngredient, ...otherIngredients) {
+//     console.log(otherIngredients);
+//   },
+// };
+
+// // Maps
+// const restaurantMap = new Map();
+
+// restaurantMap.set('name', 'The Place');
+// console.log(restaurantMap);
+
+// restaurantMap
+//   .set('categories', ['Organic', 'Artificial', 'Hybrid'])
+//   .set('open', 11)
+//   .set('close', 23)
+//   .set(true, 'we are open')
+//   .set(false, 'we are closed');
+
+// console.log(restaurantMap.get(true));
+
+// console.log(restaurantMap);
+
+// const time = 8;
+// console.log(
+//   restaurantMap.get(
+//     time > restaurantMap.get('open') && time < restaurantMap.get('close')
+//   )
+// );
+
+// console.log(restaurantMap.has('open'));
+
+// const mapOfRestaurant = new Map(Object.entries(restaurant));
+// console.log();
+// mapOfRestaurant;
 // // ---------- Sets -----------
 // const ordersSet = new Set([
 //   'Pasta',

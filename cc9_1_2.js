@@ -117,3 +117,17 @@ const allEventsName = Array.from(gameEvents.values());
 
 const uniqueEvents = new Set(allEventsName);
 console.log(uniqueEvents);
+
+// delete first yellow card
+gameEvents.delete(64);
+console.log(gameEvents);
+
+console.log(`An event happened every ${90 / gameEvents.size} minutes`);
+
+for (const [eventTime, eventName] of gameEvents) {
+  if (eventTime < 45) {
+    console.log(`First half: ${eventName}`);
+  } else {
+    console.log(`Second half: ${eventName}`);
+  }
+}

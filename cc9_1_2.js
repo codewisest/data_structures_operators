@@ -113,7 +113,8 @@ const gameEvents = new Map([
 ]);
 
 // create unique events
-const allEventsName = Array.from(gameEvents.values());
+// const allEventsName = Array.from(gameEvents.values());
+const allEventsName = [...gameEvents.values()];
 
 const uniqueEvents = new Set(allEventsName);
 console.log(uniqueEvents);

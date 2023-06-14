@@ -135,12 +135,14 @@ const game = {
 
 function convertToCamelCase(sentence) {
   const words = sentence.split('\n');
-  for (const word of words) {
+  for (const [i, word] of words.entries()) {
     const [firstWord, secondWord] = word.split('_');
     const camelCase =
       firstWord +
       secondWord.replace(secondWord[0], secondWord[0].toUpperCase());
-    console.log(camelCase.padStart(15, '*').padEnd(20, '-'));
+    console.log(
+      camelCase.padStart(15, '*').padEnd(20, '-') + `${'🛴'.repeat(i + 1)}`
+    );
   }
 }
 

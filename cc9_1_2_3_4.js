@@ -137,10 +137,9 @@ function convertToCamelCase(sentence) {
   const words = sentence.split('\n');
   for (const word of words) {
     const [firstWord, secondWord] = word.split('_');
-    const upperCaseSecondWordFirstLetter = secondWord[0].toUpperCase();
-    const upperCaseSecondWord =
-      upperCaseSecondWordFirstLetter + secondWord.slice(1);
-    const camelCase = firstWord + upperCaseSecondWord;
+    const capitalizedCaseSecondWord =
+      secondWord[0].toUpperCase() + secondWord.slice(1);
+    const camelCase = firstWord + capitalizedCaseSecondWord;
     console.log(camelCase);
   }
 }

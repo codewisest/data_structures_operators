@@ -38,7 +38,13 @@ const loginEmail = '    Hello@Wisest.ca  ';
 const normalizedEmail = loginEmail.toLowerCase().trim();
 
 console.log(loginEmail, normalizedEmail);
+const priceGB = '288,97#';
+const priceUS = priceGB.replace(',', '.').replace('#', '$');
+console.log(priceUS);
 
+const announcement =
+  'All passengers come to boarding door 23. Boarding door 23.';
+console.log(announcement.replaceAll('door', 'gate'));
 // Data needed for first part of the section
 // const restaurant = {
 //   name: 'Classico Italiano',

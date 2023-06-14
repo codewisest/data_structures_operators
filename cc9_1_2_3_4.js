@@ -140,7 +140,7 @@ function convertToCamelCase(sentence) {
     const camelCase =
       firstWord +
       secondWord.replace(secondWord[0], secondWord[0].toUpperCase());
-    console.log(camelCase);
+    console.log(camelCase.padStart(15, '*').padEnd(20, '-'));
   }
 }
 

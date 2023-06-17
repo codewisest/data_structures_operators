@@ -61,3 +61,14 @@ const transformer = function (str, fn) {
 
 transformer('JavaScript is the best!', upperFirstWord);
 transformer('JavaScript is the best!', oneWord);
+
+// return function
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('hey');
+greeterHey('Chiji');
+greet('hey')('Gloria');

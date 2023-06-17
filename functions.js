@@ -22,9 +22,9 @@ const checkIn = function (flightNum, passenger) {
   passenger.name = 'Mr. ' + passenger.name;
 
   if (passenger.passport === 82743779384) {
-    alert('Check in');
+    // alert('Check in');
   } else {
-    alert('Wrong passport');
+    // alert('Wrong passport');
   }
 };
 
@@ -42,3 +42,21 @@ const newPassport = function (person) {
 newPassport(chiji);
 
 checkIn(flight, chiji);
+
+const oneWord = function (str) {
+  return str.replace(' ', '').toLowerCase();
+};
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+const transformer = function (str, fn) {
+  //   console.log(`Original string: ${str}`);
+  console.log(`Transformed string: ${fn(str)}`);
+
+  console.log(`Transformed by: ${fn.name}`);
+};
+
+transformer('JavaScript is the best!', upperFirstWord);

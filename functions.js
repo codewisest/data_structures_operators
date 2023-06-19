@@ -115,3 +115,31 @@ bookEW(28, 'Precious Ifeanyi');
 
 const bookEW55 = book.bind(eurowings, 55);
 bookEW55('Chiji Nwagwu');
+
+lufthansa.planes = 300;
+// const buyPlane = lufthansa.buyPlane;
+lufthansa.buyPlane = function () {
+  this.planes++;
+};
+
+const buyOnePlane = lufthansa.buyPlane.bind(lufthansa);
+buyOnePlane();
+buyOnePlane();
+
+console.log(lufthansa.planes);
+
+// partial application
+// const addTax = (rate, value) => value + value * rate;
+// console.log(addTax(0.1, 200));
+
+// const addVat = addTax.bind(null, 0.23);
+// console.log(addVat(300));
+
+const addTaxRate = function (rate) {
+  return function (value) {
+    return rate * value + value;
+  };
+};
+
+const addRate23 = addTaxRate(0.23);
+console.log(addRate23(500));

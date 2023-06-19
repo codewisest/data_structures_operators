@@ -106,3 +106,12 @@ book.call(lufthansa, 40, 'Chizoba Ugwu');
 const flightData = [583, 'Vincent Ugwu'];
 
 book.apply(eurowings, flightData);
+
+// Bind method
+const bookEW = book.bind(eurowings);
+
+bookEW(83, 'Nathan Goodyear');
+bookEW(28, 'Precious Ifeanyi');
+
+const bookEW55 = book.bind(eurowings, 55);
+bookEW55('Chiji Nwagwu');

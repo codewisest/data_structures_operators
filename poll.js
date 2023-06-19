@@ -6,22 +6,18 @@ const poll = {
   answers: new Array(4).fill(0),
   registerNewAnswer() {
     const userInput = Number(
-      prompt(
-        'What is your favourite programming language? \n 0: JavaScript \n 1: Python \n 2: Rust \n 3: C++'
-      )
+      prompt(`${this.question} \n${this.options.join('\n')}`)
     );
-    console.log(this);
     if (userInput >= 0 && userInput <= this.answers.length) {
       this.answers[userInput]++;
     } else {
       console.log('invalid selection');
     }
-    this.displayResult();
+    this.displayResult(this.answers);
     return userInput;
   },
 
   displayResult(type) {
-    type = this.answers;
     console.log(type);
   },
 };
@@ -31,4 +27,8 @@ pollButton.addEventListener('click', () => {
   poll.registerNewAnswer();
 });
 
-console.log(poll.answers);
+const testData = [5, 2, 3];
+const testData2 = [1, 5, 3, 9, 6, 1];
+
+poll.displayResult(testData);
+poll.displayResult(testData2);

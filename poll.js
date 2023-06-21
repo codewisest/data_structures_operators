@@ -32,3 +32,12 @@ const testData2 = [1, 5, 3, 9, 6, 1];
 
 poll.displayResult(testData);
 poll.displayResult(testData2);
+
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+
+  document.querySelector('body').addEventListener('click', () => {
+    header.style.color = 'blue';
+  });
+})();

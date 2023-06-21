@@ -329,3 +329,26 @@ const booker = secureBooking();
 booker();
 booker();
 booker();
+
+let f;
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 23);
+  };
+};
+
+g();
+f();
+
+// Example
+const boardPassenger = function (n, wait) {
+  const perGroup = n / 3;
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n}`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+  console.log(`will start boarding i ${wait} seconds`);
+};
+boardPassenger(180, 3);
